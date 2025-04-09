@@ -1,101 +1,98 @@
+import Feature from "@/components/Features/Feature";
+import Ratings from "@/components/Ratings/Ratings";
+import Footer from "@/components/Footer/Footer";
+import Services from "@/components/Services/Services"
+import { FaRegCircleCheck } from "react-icons/fa6";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <div className='flex items-center justify-around md:mt-2 py-36  bg-gradient-to-b from-[#7adf94] to-primaryBackground md:bg-none'>
+        <div className="text-center md:text-left">
+          <h2 className='mt-14 mb-2 text-2xl md:text-4xl text-center md:text-left font-bold'>Professional Services by Student</h2>
+          <h2 className='mb-5 text-2xl md:text-4xl text-center md:text-left font-bold'>Specialists</h2>
+          <p className='mb-11 italic text-lg md:text-xl text-[#5c5c5c] dark:text-[#b5b5b5]'>&apos;Knell – Expert Services by Students, For Everyone!&apos;</p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className='mb-14 text-center md:text-left'>
+            <Link href={'/signup/provider'}><button className='bg-button p-2 mx-3 my-5 rounded-md text-[#ffffff]'>Become a Provider</button></Link>
+            <Link href={'/signup/user'}><button className='border border-button p-2 mx-3 my-5 rounded-md '>Request Service</button></Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div>
+          <Image src='/service.jpg' width={500} height={500} alt="service image" className="rounded-xl hidden md:inline"/> 
+        </div>
+      </div>
+
+      <Feature />
+      <Services />
+      <div>
+        <h2 className="font-bold lg:text-5xl sm:text-4xl mt-20 mb-3 mx-7">Don&apos;t take our word for it,</h2>
+        <h2 className="font-bold lg:text-5xl sm:text-4xl mx-7">see what our clients say</h2>
+
+        <p className="mx-7 mt-8 pr-10">We&apos;re honored by the feedback, and it fuels our commitment to delivering exceptional financial services.</p>
+        <p className="mx-7 pr-10">Your trust is our greatest achievment.</p>
+      </div>
+      <Ratings />
+
+      <div className="bg-darkTextColor dark:bg-secondaryDarkBackground p-10 flex flex-col items-center">
+        <h1 className="text-center font-bold text-2xl sm:text-3xl">Become knell member like you want</h1>
+
+        <div className="flex flex-wrap p-3">
+          <div className="bg-secondaryDarkBackground dark:bg-[#fdfcfb] rounded-xl md:mx-10 my-5">
+            <div className="md:px-5 py-3">
+              <p className="font-bold bg-[#D5F8D0] dark:bg-[#D5F8D0] text-primaryTextColor inline-block m-3 mb-8 px-2 py-1 md:px-3 md:py-1 rounded-md">Client</p>
+              <h1 className="text-xl font-bold px-3 text-darkTextColor dark:text-primaryTextColor">Find the Best Services for You</h1>
+
+              <div className="px-3 my-7 text-darkTextColor dark:text-primaryTextColor">
+                <div className="flex items-center my-4 text-sm md:text-base">
+                  <FaRegCircleCheck className="mr-2"/>
+                  <p>Easily find skilled professionals for your needs</p>
+                </div>
+                <div className="flex items-center my-4 text-sm md:text-base">
+                  <FaRegCircleCheck className="mr-2"/>
+                  <p>Book services at your preferred time and location</p>
+                </div>
+                <div className="flex items-center my-4 text-sm md:text-base">
+                  <FaRegCircleCheck className="mr-2"/>
+                  <p>Reliable service backed by reviews and ratings</p>
+                </div>
+              </div>
+
+              <button className="bg-button text-[#ffffff] m-3 mt-5 px-3 py-2 rounded-md">Request a Service</button>
+            </div>
+            {/* <Image src='/client.jpg' width={800} height={800} className="rounded-b-md" alt="client"/> */}
+          </div>
+
+          <div className="bg-secondaryDarkBackground dark:bg-[#fdfcfb] rounded-xl mx-3 md:mx-10">
+            <div className="md:px-5 py-3">
+              <p className="font-bold bg-[#D5F8D0] dark:bg-[#D5F8D0] text-primaryTextColor inline-block m-3 mb-8 px-3 py-1 rounded-md">Service Provider</p>
+              <h1 className="text-2xl font-bold px-3 text-darkTextColor dark:text-primaryTextColor">Find the Best Services for You</h1>
+              
+              <div className="px-3 my-7 text-darkTextColor dark:text-primaryTextColor">
+                <div className="flex items-center my-2">
+                  <FaRegCircleCheck className="mr-2"/>
+                  <p>Set your own schedule and pricing</p>
+                </div>
+                <div className="flex items-center my-2">
+                  <FaRegCircleCheck className="mr-2"/>
+                  <p>Connect with potential clients effortlessly</p>
+                </div>
+                <div className="flex items-center my-2">
+                  <FaRegCircleCheck className="mr-2"/>
+                  <p>Build trust through ratings and reviews</p>
+                </div>
+              </div>
+
+              <button className="bg-button text-[#ffffff] m-3 mt-5 px-3 py-2 rounded-md">Join as a Service Provider</button>
+            </div>
+            {/* <Image src='/provider.jpg' width={800} height={1000} className="rounded-b-md" alt="provider"/> */}
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

@@ -9,10 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primaryBackground: '#F2FBF5',
+        darkBackground: '#001A12',
+        secondaryDarkBackground: '#00251A',
+        primaryTextColor: '#1A3D2F',
+        darkTextColor: '#E6FAEA',
+        button: '#0FA34D'
       },
     },
   },
+  darkMode: 'selector',
   plugins: [],
 } satisfies Config;
