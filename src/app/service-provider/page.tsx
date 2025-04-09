@@ -5,11 +5,19 @@ import Link from "next/link";
 import { useState } from "react"
 import { RxCross2 } from "react-icons/rx";
 
+interface Provider {
+    id: string;
+    imgSrc: string;
+    name: string;
+    occupation: string;
+    description: string;
+}
+
 function Page() {
     const [showModal, setShowModal] = useState(false);
-    const [provider, setProvider] = useState(null);
+    const [provider, setProvider] = useState<Provider | null>(null);
 
-    const handleCardClick = (provider)=>{
+    const handleCardClick = (provider: Provider) => {
         setProvider(provider)
         setShowModal(true);
     }
@@ -29,7 +37,7 @@ function Page() {
         </div>
       ))}
         {
-            showModal
+            showModal && provider
             ?   <div className="absolute bg-primaryBackground text-primaryTextColor w-[40%] my-12 p-8 shadow-md rounded-md">
                     <div className="w-[100%] flex justify-end">
                         <RxCross2 size={25} className="relative right-0 mb-5 cursor-pointer" onClick={()=>modalClose()}/>
