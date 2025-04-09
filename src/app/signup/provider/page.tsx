@@ -112,11 +112,11 @@ function ProviderSignup() {
                         )}
                         <div className="flex">
                             <div className="mr-4">
-                                <input type="radio" name="experience" id="experience-yes" className="mx-1" {...register('haveExperience', {required: true})}/>
+                                <input type="radio" id="experience-yes" className="mx-1" {...register('haveExperience', {required: true})}/>
                                 <label htmlFor="price" className="font-bold">Yes</label>
                             </div>
                             <div className="mx-4">
-                                <input type="radio" name="experience" id="experience-no" className="mx-1" {...register('haveExperience', {required: true})}/>
+                                <input type="radio" id="experience-no" className="mx-1" {...register('haveExperience', {required: true})}/>
                                 <label htmlFor="price" className="font-bold">No</label>
                             </div>
                         </div>
@@ -134,7 +134,7 @@ function ProviderSignup() {
                         {errors.location?.type==="required" && (
                             <p className="text-red-500 text-sm mb-2">Location is required</p>
                         )}
-                        <select name="location" id="location" className="border-2 outline-none px-2 py-1 w-[90%] dark:text-primaryTextColor" {...register('location', {required: true})}>
+                        <select id="location" className="border-2 outline-none px-2 py-1 w-[90%] dark:text-primaryTextColor" {...register('location', {required: true})}>
                             <option value="">Please select your area in Delhi</option>
                             <option value="noida">Noida</option>
                             <option value="new-delhi">New Delhi</option>
@@ -151,16 +151,16 @@ function ProviderSignup() {
                             <p className="text-red-500 text-sm mb-2">{errors.availability.message}</p>
                         )}
                         <div>
-                            <input type="checkbox" name="weekday-days" id="" value='weekday-days' className="mr-2" {...register('availability', {validate: (value)=> value.length>0 || "Please select one option"})}/>
-                            <label htmlFor="">Weekdays (Daytime)</label>
+                            <input type="checkbox" id="weekday-daytime" value='weekday-days' className="mr-2" {...register('availability', {validate: (value)=> value.length>0 || "Please select one option"})}/>
+                            <label htmlFor="weekday-daytime">Weekdays (Daytime)</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="weekday-night" id="" value='weekday-night' className="mr-2" {...register('availability')}/>
-                            <label htmlFor="">Weekdays (Evenings)</label>
+                            <input type="checkbox" id="weekday-night" value='weekday-night' className="mr-2" {...register('availability')}/>
+                            <label htmlFor="weekday-night">Weekdays (Evenings)</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="weekend" id="" value='weekend' className="mr-2" {...register('availability')}/>
-                            <label htmlFor="">Weekends</label>
+                            <input type="checkbox" id="weekend" value='weekend' className="mr-2" {...register('availability')}/>
+                            <label htmlFor="weekend">Weekends</label>
                         </div>
                     </div>
 
