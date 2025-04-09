@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react"
 import { RxCross2 } from "react-icons/rx";
 
-function page() {
+function Page() {
     const [showModal, setShowModal] = useState(false);
     const [provider, setProvider] = useState(null);
 
@@ -22,19 +22,19 @@ function page() {
     <div className="grid grid-rows-1 md:grid-rows-2 grid-cols-2 gap-6 justify-center justify-items-center">
       {SERVICE_PROVIDER.map((provider)=>(
         <div className="bg-darkBackground text-darkTextColor m-5 p-5 rounded-md w-[60%] h-max cursor-pointer flex flex-col items-center" key={provider.id} onClick={()=>handleCardClick(provider)}>
-            <Image src={provider.imgSrc} width={150} height={150} className="rounded-md"/>
+            <Image src={provider.imgSrc} width={150} height={150} className="rounded-md" alt={`${provider.name}-provider-profile-pic`}/>
             <h1 className="text-2xl font-bold pt-3">{provider.name}</h1>
             <h2 className="pb-3">{provider.occupation}</h2>
             <p>{provider.description.slice(0,130)}...</p>
         </div>
       ))}
         {
-            provider
+            showModal
             ?   <div className="absolute bg-primaryBackground text-primaryTextColor w-[40%] my-12 p-8 shadow-md rounded-md">
                     <div className="w-[100%] flex justify-end">
                         <RxCross2 size={25} className="relative right-0 mb-5 cursor-pointer" onClick={()=>modalClose()}/>
                     </div>
-                    <Image src={provider.imgSrc} width={150} height={150} className="rounded-md"/>
+                    <Image src={provider.imgSrc} width={150} height={150} className="rounded-md" alt={`${provider.name}-provider-profile-pic`}/>
                     <h1 className="text-2xl font-bold pt-3">{provider.name}</h1>
                     <h2 className="pb-3">{provider.occupation}</h2>
                     <p>{provider.description}</p>
@@ -47,4 +47,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

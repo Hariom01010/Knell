@@ -5,7 +5,7 @@ import { SERVICES } from "@/constants"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { db } from "@/sdk-initialize";
 import { doc, setDoc } from "firebase/firestore";
-import { v4 as uuidv4, validate } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 type ProvideSignupForm = {
     fname: string;
